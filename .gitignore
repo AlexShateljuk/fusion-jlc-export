@@ -1,0 +1,23 @@
+# Generated JLCPCB export output
+*_jlc_bom.csv
+*_jlc_cpl.csv
+*_jlc_warnings.txt
+*_gerbers.zip
+*_run.scr
+*_assembly_top.pdf
+*_assembly_bottom.pdf
+
+# EAGLE / Fusion backups & scratch
+*.b#?
+*.s#?
+*.l#?
+*.bak
+eagle.epf
+
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/

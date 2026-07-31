@@ -1,0 +1,37 @@
+# ============================================================================
+# assembly_print.scr
+# Assembly drawing (2 layers) -> PDF and/or PNG. No CAM / no automation:
+# PRINT and EXPORT IMAGE act on whatever layers are shown via DISPLAY.
+#
+# Run from the PCB (board) editor: PCB Automation -> Run Script.
+# Edit output paths (forward slashes even on Windows) and SCALE below.
+#
+# CLEAN layer set (no via/hole crosses):
+#   20 = board outline, 21/22 = tPlace/bPlace, 25/26 = tNames/bNames
+#   (optionally 51/52 = tDocu/bDocu).  Do NOT add 17 18 44 45 - those are the
+#   pads/vias/drills/holes that show up as the "+" crosses.
+#
+# SCALE: append a number to PRINT:
+#   (nothing) = fit to page   |   1.0 = actual 1:1   |   2.0 = 2x , etc.
+# ============================================================================
+
+SET CONFIRM YES;
+
+# ---------- TOP assembly ----------
+DISPLAY NONE;
+DISPLAY 20 21 25;
+PRINT FILE 'C:/pcb/out/assembly_top.pdf' PAPER A4 LANDSCAPE BLACK SOLID -CAPTION 1.0;
+# PNG instead: EXPORT IMAGE 'C:/pcb/out/assembly_top.png' MONOCHROME 300;
+
+# ---------- BOTTOM assembly ----------
+DISPLAY NONE;
+DISPLAY 20 22 26;
+PRINT FILE 'C:/pcb/out/assembly_bottom.pdf' PAPER A4 LANDSCAPE BLACK SOLID -CAPTION 1.0;
+# PNG instead: EXPORT IMAGE 'C:/pcb/out/assembly_bottom.png' MONOCHROME 300;
+
+# ---------- restore view ----------
+DISPLAY ALL;
+
+# Tips: drop BLACK for colour; drop SOLID for layer fill patterns;
+#       add MIRROR for a mirrored bottom; change 1.0 for a different scale
+#       (or remove the number to auto-fit the page).

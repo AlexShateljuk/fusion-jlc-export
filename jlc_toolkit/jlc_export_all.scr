@@ -1,0 +1,24 @@
+# ============================================================================
+# jlc_export_all.scr  —  OPTIONAL fully-headless trigger.
+#
+# You usually DON'T need this file: just run fusion_jlc_export.ulp directly and
+# pick the folder + .cam in its dialog. This .scr exists only if you want a
+# zero-click run with paths baked in (e.g. from a keyboard shortcut).
+#
+# The ULP does everything: BOM + CPL, then fires the CAM job itself.
+# Passing a 2nd argument (the .cam) makes it run headless with no dialog.
+#
+# EDIT THE THREE PATHS (forward slashes even on Windows; output folder must exist):
+#   arg1 = output folder
+#   arg2 = CAM job template (.cam)
+#   (the ULP path itself)
+# ============================================================================
+
+SET CONFIRM YES;
+RUN 'C:/pcb/ulp/fusion_jlc_export.ulp' 'C:/pcb/out' 'C:/pcb/jobs/jlcpcb.cam';
+
+# Result in C:/pcb/out:
+#   <board>_gerbers.zip
+#   <board>_jlc_bom.csv
+#   <board>_jlc_cpl.csv
+#   <board>_jlc_warnings.txt   (only if warnings)
