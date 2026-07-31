@@ -5,7 +5,7 @@ assembly PDF). Two fab-only CAM templates cover 2- and 4-layer boards.
 
 ## Files
 
-- **fusion_jlc_export.ulp** — main tool. Dialog to pick output folder, file base
+- **../fusion_jlc_export.ulp** — main tool (in the repo root). Dialog to pick output folder, file base
   name, a `.cam` template, and toggles. Produces:
   - `<base>_jlc_bom.csv`  — BOM with Comment, Designator, Footprint, LCSC Part #, Part Number, Quantity
   - `<base>_jlc_cpl.csv`  — pick & place (centroid)
@@ -23,7 +23,7 @@ assembly PDF). Two fab-only CAM templates cover 2- and 4-layer boards.
 ## Normal workflow (one click)
 
 1. Open your board in Fusion Electronics.
-2. PCB Automation → Run ULP → `fusion_jlc_export.ulp`.
+2. PCB Automation → Run ULP → `../fusion_jlc_export.ulp` (in the repo root).
 3. In the dialog:
    - Output folder + file base name (defaults to the ULP folder / project name).
    - CAM job template: pick `jlcpcb_2_layer_fab.cam` or `..._4_layer_fab.cam`.

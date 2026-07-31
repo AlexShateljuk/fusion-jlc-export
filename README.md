@@ -23,10 +23,12 @@ assembly.
 
 ## Contents
 
-Everything lives in [`jlc_toolkit/`](jlc_toolkit/):
+- **[`fusion_jlc_export.ulp`](fusion_jlc_export.ulp)** — main tool (in the repo
+  root). A dialog lets you pick the output folder, file base name, a `.cam`
+  template, and export toggles.
 
-- **`fusion_jlc_export.ulp`** — main tool. A dialog lets you pick the output folder,
-  file base name, a `.cam` template, and export toggles.
+Supporting files live in [`jlc_toolkit/`](jlc_toolkit/):
+
 - **`jlcpcb_2_layer_fab.cam`** / **`jlcpcb_4_layer_fab.cam`** — fab-only CAM jobs
   (Gerber + drill only), safe to run from automation/script.
 - **`assembly_print.scr`** — standalone assembly drawing → PDF/PNG (no CAM needed).
@@ -38,7 +40,7 @@ gotchas.
 ## Quick start
 
 1. Open your board in Fusion Electronics.
-2. **PCB Automation → Run ULP →** `jlc_toolkit/fusion_jlc_export.ulp`.
+2. **PCB Automation → Run ULP →** `fusion_jlc_export.ulp`.
 3. In the dialog: choose output folder + base name, pick the matching CAM template
    (`2_layer` or `4_layer`), leave *Run CAM job* checked. Optionally enable the
    assembly PDF.
